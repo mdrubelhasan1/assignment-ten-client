@@ -20,10 +20,10 @@ const NavigationBar = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto gap-4">
-                        <Link to='/'>Home</Link>
-                        <Link to='/blog'>Blog</Link>
-                        <Link className='mr-4' to='/register'>Register</Link>
-                        <Link to='/'> chef</Link>
+                        <Link className='link-underline-light' to='/'>Home</Link>
+                        <Link  className='link-underline-light' to='/blog'>Blog</Link>
+                        <Link className='mr-4 link-underline-light' to='/register'>Register</Link>
+                        
                         
                         {user ?
                             <Button

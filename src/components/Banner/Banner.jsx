@@ -15,7 +15,7 @@ const Banner = () => {
 
    
     return (
-        <div>
+        <div className='pt-4'>
 
             {
                 photos.map(photo => <div

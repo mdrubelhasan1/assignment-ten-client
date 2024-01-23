@@ -14,7 +14,9 @@ import Blog from './components/Blog/Blog';
 import AuthProviders from './components/providers/AuthProviders';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
-import Chefs from './components/Chefs/Chefs';
+import RecipiDetails from './components/RecipieDetails/RecipiDetails';
+
+
 
 
 const router = createBrowserRouter([
@@ -38,6 +40,11 @@ const router = createBrowserRouter([
         path: '/login',
         element: <Login></Login>
       },
+      {
+        path: '/recipie',
+        element: <RecipiDetails></RecipiDetails>
+      }
+     
       
     ]
   },
