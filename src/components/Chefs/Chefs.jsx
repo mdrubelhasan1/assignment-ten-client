@@ -16,7 +16,7 @@ const Chefs = () => {
     return (
         
          <Container>
-             <div className='chefcontainer'>
+             <div className='chefcontainer '>
           {
                 chefs.map(chef=> <p
                     key={chef.id}
