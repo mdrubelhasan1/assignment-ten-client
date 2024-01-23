@@ -23,7 +23,8 @@ const NavigationBar = () => {
                         <Link to='/'>Home</Link>
                         <Link to='/blog'>Blog</Link>
                         <Link className='mr-4' to='/register'>Register</Link>
-
+                        <Link to='/'> chef</Link>
+                        
                         {user ?
                             <Button
                                 onClick={handleLogout} variant="secondary">Logout

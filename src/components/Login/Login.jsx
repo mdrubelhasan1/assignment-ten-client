@@ -3,9 +3,13 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProviders';
 
-const Login = () => {
 
-    const { signIn } = useContext(AuthContext);
+
+
+const Login = () => {
+   
+
+    const { signIn, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -29,8 +33,20 @@ const Login = () => {
             })
     }
 
+    const handleGoogleSignIn = ()=>{
+        googleSignIn()
+            .then(result=>{
+                const user = result.user
+                console.log(user)
+            })
+            .catch(error=>{
+                console.log(error)
+            })
+    }
+
     return (
         <Container className='w-50 mx-auto'>
+            <h2 className='text-primary'>Please Login</h2>
             <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -44,9 +60,7 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
+                
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
@@ -55,6 +69,7 @@ const Login = () => {
                     Don't have an account? <Link to='/register'>Register</Link>
                 </Form.Text>
             </Form>
+            <Button onClick={handleGoogleSignIn} variant="warning">SignIn With Google</Button>
         </Container>
     );
 };
