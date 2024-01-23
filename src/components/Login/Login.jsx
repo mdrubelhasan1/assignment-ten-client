@@ -7,9 +7,9 @@ import { AuthContext } from '../providers/AuthProviders';
 
 
 const Login = () => {
-   
 
-    const { signIn, googleSignIn } = useContext(AuthContext);
+
+    const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -26,23 +26,14 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser)
-                navigate(from, {replace: true})
+                navigate(from, { replace: true })
             })
-            .catch(error => {   
+            .catch(error => {
                 console.log(error)
             })
     }
 
-    const handleGoogleSignIn = ()=>{
-        googleSignIn()
-            .then(result=>{
-                const user = result.user
-                console.log(user)
-            })
-            .catch(error=>{
-                console.log(error)
-            })
-    }
+   
 
     return (
         <Container className='w-50 mx-auto'>
@@ -60,7 +51,7 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" name='password' placeholder="Password" />
                 </Form.Group>
-                
+
                 <Button variant="primary" type="submit">
                     Login
                 </Button>
@@ -69,7 +60,7 @@ const Login = () => {
                     Don't have an account? <Link to='/register'>Register</Link>
                 </Form.Text>
             </Form>
-            <Button onClick={handleGoogleSignIn} variant="warning">SignIn With Google</Button>
+           
         </Container>
     );
 };
