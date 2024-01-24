@@ -12,9 +12,9 @@ const Footer = () => {
                 <p>Kabul, Afganistan</p>
             </div>
             <div>
-                <p>Contact us</p>
-                <p>Al-Aqsha-Avenue</p>
-                <p>Kabul, Afganistan</p>
+                <p>Follow Us</p>
+                <p>Facebook</p>
+                <p>Instragram</p>
             </div>
             <div>
                 <h2>Stay connected!</h2>

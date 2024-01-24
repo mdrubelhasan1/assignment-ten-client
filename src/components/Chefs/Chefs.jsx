@@ -11,7 +11,7 @@ const Chefs = () => {
     console.log(chefs)
 
     useEffect(()=>{
-        fetch('http://localhost:5000/chefdata')
+        fetch('https://assignment-ten-server-tawny.vercel.app/chefdata')
         .then(res=>res.json())
         .then(data=> setChefs(data))
         .catch(error=>console.error(error))

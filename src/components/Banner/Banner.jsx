@@ -7,7 +7,7 @@ const Banner = () => {
    
 
     useEffect(() => {
-        fetch('http://localhost:5000/bannerphoto')
+        fetch('https://assignment-ten-server-tawny.vercel.app/bannerphoto')
             .then(res => res.json()
                 .then(data => setPhotos(data)))
             .catch(error => console.log(error))
