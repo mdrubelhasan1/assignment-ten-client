@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <Container className=' bg-secondary text-white'>
+        <Container className=' bg-secondary text-white mt-5'>
             <div className='d-flex justify-content-between p-5'>
             <div>
                 <Link className='text-white'><p>Contact us</p></Link>

@@ -15,6 +15,9 @@ import AuthProviders from './components/providers/AuthProviders';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import RecipiDetails from './components/RecipieDetails/RecipiDetails';
+import RecipieCard from './components/RecipieCard/RecipieCard';
+import ErrorPage from './components/ErrorPage/ErrorPage';
+
 
 
 
@@ -23,6 +26,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -41,9 +45,22 @@ const router = createBrowserRouter([
         element: <Login></Login>
       },
       {
-        path: '/recipie',
-        element: <RecipiDetails></RecipiDetails>
+        path: ':id',
+        element: <RecipiDetails></RecipiDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/chefdata/${params.id}`)
+      },
+      {
+        path: '/chefdata/:id',
+        element: <RecipieCard></RecipieCard>,
+        
+      },
+      {
+        path: '/',
+        element: <Home></Home>,
+       
+        
       }
+     
      
       
     ]

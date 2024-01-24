@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../../firebase/firebase.config';
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { Spinner } from 'react-bootstrap';
 
 
 export const AuthContext = createContext(null)
@@ -11,6 +12,10 @@ const AuthProviders = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
+    // const [spinner, setSpinner] = useState(null)
+    // if(loading){
+    //    setSpinner( <Spinner animation="border" variant="primary" />)
+    //  }
 
 
     const createUser = (email, password) => {
@@ -41,6 +46,7 @@ const AuthProviders = ({ children }) => {
     const authInfo = {
         user,
         loading,
+        
         createUser,
         signIn,
         logOut,

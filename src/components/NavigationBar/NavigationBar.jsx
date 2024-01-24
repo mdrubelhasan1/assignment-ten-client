@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
-import { Button, Container, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Button, Container, Nav,  Navbar } from 'react-bootstrap';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProviders';
+import './NavigationBar.css'
 
 const NavigationBar = () => {
 
@@ -36,15 +37,15 @@ const NavigationBar = () => {
     }
 
     return (
-        <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+        <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary sticky-md-top">
             <Container>
                 <Navbar.Brand href="#home">Afganistani Famous Food</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto gap-4 ">
-                        <Link className='link-underline-light' to='/'>Home</Link>
-                        <Link className='link-underline-light' to='/blog'>Blog</Link>
-                        <Link className='mr-4 link-underline-light' to='/register'>Register</Link>
+                        <NavLink className='link-underline-light' to='/'>Home</NavLink>
+                        <NavLink className='link-underline-light' to='/blog'>Blog</NavLink>
+                        <NavLink className='mr-4 link-underline-light' to='/register'>Register</NavLink>
 
 
                         {user ?
