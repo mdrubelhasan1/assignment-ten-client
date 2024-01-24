@@ -17,6 +17,7 @@ import Login from './components/Login/Login';
 import RecipiDetails from './components/RecipieDetails/RecipiDetails';
 import RecipieCard from './components/RecipieCard/RecipieCard';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 
 
@@ -51,15 +52,10 @@ const router = createBrowserRouter([
       },
       {
         path: '/chefdata/:id',
-        element: <RecipieCard></RecipieCard>,
-        
-      },
-      {
-        path: '/',
-        element: <Home></Home>,
-       
+        element: <PrivateRoute><RecipieCard></RecipieCard></PrivateRoute>,
         
       }
+     
      
      
       
